@@ -1,0 +1,225 @@
+body {
+  margin: 0; 
+  background: #6a0dad; /* solid purple background */
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 50px 20px;
+  color: #3a1d6d;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Balloon emojis floating */
+.balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 10;
+  font-size: 3.5rem;
+  user-select: none;
+  pointer-events: none;
+}
+.balloon {
+  position: absolute;
+  animation: floatUp 6s infinite ease-in-out;
+  filter: drop-shadow(0 0 3px #e8a1ff);
+}
+.balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+.balloon:nth-child(2) { left: 40%; animation-delay: 1.5s; }
+.balloon:nth-child(3) { left: 70%; animation-delay: 3s; }
+
+/* Glitter sparkle animation on balloons */
+.balloon::after {
+  content: '✨';
+  position: absolute;
+  top: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  animation: sparkle 2.5s infinite ease-in-out;
+  opacity: 0.8;
+  pointer-events: none;
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.3; transform: translateX(-50%) scale(1.5); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100px); opacity: 1; }
+  100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Glowing Happy Birthday text */
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 5rem;
+  color: white;
+  animation: glow 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 20;
+  margin-bottom: 30px;
+  user-select: none;
+}
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 12px #fff, 0 0 25px #bf7fff; }
+  50% { text-shadow: 0 0 25px #e8a1ff, 0 0 50px #d9a9ff; }
+}
+
+/* Frosted glass rainy-season style box */
+.message-container {
+position: relative;
+max-width: 900px;
+margin: 0 auto;
+background: rgba(255, 255, 255, 0.15);
+border-radius: 20px;
+padding: 40px 50px;
+color: white;
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+
+/* stronger white outline */
+border: 1.5px solid rgba(255, 255, 255, 0.6);
+
+/* soft inner white glow */
+box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
+
+font-family: 'Mukti', cursive;
+font-size: 1.3rem;
+line-height: 1.6;
+user-select: text;
+overflow: hidden; /* important to clip the shine */
+}
+
+/* The shimmering highlight */
+.message-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: -50%;  /* start off to the left */
+width: 50%;
+height: 100%;
+
+background: linear-gradient(
+  120deg,
+  transparent,
+  rgba(255, 255, 255, 0.4),
+  transparent
+);
+
+transform: skewX(-25deg);
+animation: shimmer 3s infinite;
+pointer-events: none; /* so it doesn't interfere with clicking/selecting */
+z-index: 10;
+}
+
+@keyframes shimmer {
+0% {
+  left: -50%;
+}
+100% {
+  left: 150%; /* move fully across the box */
+}
+}
+
+
+/* Watermark text behind with glowing and dimming */
+.watermark {
+  position: absolute;
+  font-family: 'Pacifico', cursive;
+  font-size: 4.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 900;
+  user-select: none;
+  animation: watermarkGlow 4s ease-in-out infinite;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 5;
+  opacity: 0.3;
+  letter-spacing: 8px;
+  text-shadow:
+    0 0 12px #fff,
+    0 0 25px #bf7fff;
+}
+@keyframes watermarkGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.75; }
+}
+
+/* Button */
+button {
+  margin-top: 30px;
+  background: #7b5fff;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #9b79ff;
+  transition: background 0.3s ease;
+  display: block;
+  user-select: none;
+}
+button:hover {
+  background: #5c3ecb;
+}
+
+/* Confetti piece styles */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  opacity: 0.9;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1000;
+  will-change: transform, opacity;
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .message-container {
+    padding: 25px 20px;
+    font-size: 1.1rem;
+  }
+  .watermark {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="balloons">
+  <div class="balloon">🎈</div>
+  <div class="balloon">🎈</div>
+  <div class="balloon">🎈</div>
+</div>
+
+<h1>Happy Birthday Battu 💖😘</h1>
+
+<div class="message-container">
+  <div class="watermark">MUTTAKANNU</div>
+  <p>
+    You are the reason smiles feel warmer, and days feel brighter.<br/>
+    May your life overflow with joy, laughter, and endless love. 💜<br/>
+    (I'll personalize this message later)
+  </p>
+  <button id="confetti-btn">Click for a Surprise 🎉</button>
+</div>
+
+
+
+</body>
