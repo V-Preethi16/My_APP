@@ -8,17 +8,17 @@
   @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Mukti&display=swap');
 
   body {
-    margin: 0; 
-    background: linear-gradient(to bottom, #3a0ca3, #6a0dad, #c084fc);
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-    text-align: center;
-    padding: 50px 20px;
-    color: #3a1d6d;
-    min-height: 100vh;
-    position: relative;
-  }
-/* For desktop: no vertical scroll */
+  height:100;
+  margin: 0;
+  background: linear-gradient(to bottom, #3a0ca3, #6a0dad, #c084fc);
+  color: #3a1d6d;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  position: relative;
+}
 
   /* Balloon emojis floating */
   .balloons {
@@ -162,6 +162,7 @@
   position: relative;
   animation: sparkle 2s infinite ease-in-out;
   transition: transform 0.3s ease;
+  margin-top: 40px;
 }
 
 .cute-button:hover {
@@ -274,9 +275,8 @@
 Today is all about you! As you blow out the candles and make a wish, know that I'm wishing for all your dreams to come true this year.
     </b></p>
     <button id="confettiButton">Touch it Love💖</button>
-    <a href="gallery.html" class="cute-button">💫 Go to Gallery 💜</a>
   </div>
-
+  <a href="gallery.html" class="cute-button">💫 Go to Gallery 💜</a>
   <script>
 const colors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7', '#fcd5ce', '#cdb4db', '#ffc8dd', '#b5ead7'];
 
