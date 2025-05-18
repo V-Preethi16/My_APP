@@ -8,20 +8,32 @@
   @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Mukti&display=swap');
 
   body {
-    height: 100%;
-    overflow: hidden; 
-    margin: 0; 
-    background: linear-gradient(to bottom, #3a0ca3, #6a0dad, #c084fc);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-    text-align: center;
-    padding: 50px 20px;
-    color: #3a1d6d;
-    min-height: 100vh;
-    position: relative;
-  }
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to bottom, #3a0ca3, #6a0dad, #c084fc);
+  color: #3a1d6d;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  position: relative;
+}
 
+/* For desktop: no vertical scroll */
+@media (min-width: 768px) {
+  body {
+    overflow-y: hidden;
+  }
+}
+
+/* For mobile: allow vertical scrolling */
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+    padding: 20px 15px; /* reduce padding so no overflow */
+  }
+}
   /* Balloon emojis floating */
   .balloons {
     position: fixed;
