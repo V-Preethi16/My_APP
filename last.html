@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Page - Glowing Stars</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #ff4d4d, #990000);
+      overflow: hidden;
+      color: white;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+                  0 0 15px rgba(255, 255, 255, 0.6);
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.2;
+        transform: scale(1);
+        filter: brightness(0.8) blur(1px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1.5);
+        filter: brightness(2) blur(2px);
+      }
+    }
+
+    .message-container {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem 3rem;
+      max-width: 800px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .message-box h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .message-box p {
+      font-size: 1.3rem;
+      color: #ffe6e6;
+      line-height: 1.8;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: beat 1s infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Glowing Stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Message Section -->
+  <div class="message-container">
+    <div class="message-box">
+      <div class="heart">❤️</div>
+      <h1>Forever Yours</h1>
+      <p>
+        In this vast universe filled with countless stars,<br>
+        I found one that shines brighter than them all — <strong>You</strong>.<br><br>
+        Every moment, every smile, every shared silence<br>
+        means the world to me.<br><br>
+        No matter where life takes us,<br>
+        My heart will always find its way back to you.
+      </p>
+    </div>
+  </div>
+
+  <!-- Stars Script -->
+  <script>
+    const starsContainer = document.getElementById("stars");
+    const numberOfStars = 120;
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+
+      const delay = Math.random() * 5;
+      const duration = 1.5 + Math.random() * 2;
+
+      star.style.animationDelay = `${delay}s`;
+      star.style.animationDuration = `${duration}s`;
+
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
