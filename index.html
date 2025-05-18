@@ -8,8 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Mukti&display=swap');
 
   body {
+    height: 100%;
+    overflow: hidden; 
     margin: 0; 
-    background: #6a0dad; /* solid purple background */
+    background: linear-gradient(to bottom, #3a0ca3, #6a0dad, #c084fc);
+    color: white;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
     text-align: center;
@@ -135,6 +138,39 @@
 }
 
 
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 10px #9e6eff, 0 0 20px #6a0dad, 0 0 30px #9e6eff;
+  }
+  50% {
+    box-shadow: 0 0 20px #6a0dad, 0 0 30px #9e6eff, 0 0 40px #6a0dad;
+  }
+  100% {
+    box-shadow: 0 0 10px #9e6eff, 0 0 20px #6a0dad, 0 0 30px #9e6eff;
+  }
+}
+
+.cute-button {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #6a0dad, #b18bfa);
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Pacifico', cursive;
+  position: relative;
+  animation: sparkle 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.cute-button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(to right, #b18bfa, #6a0dad);
+}
+
   /* Watermark text behind with glowing and dimming */
   .watermark {
     position: absolute;
@@ -235,11 +271,12 @@
   <div class="message-container">
     <div class="watermark">MUTTAKANNU</div>
     <p><b>
-      May your life be filled with tons and tons of happiness and laughter, MY BATTU ❤️</b>
+      May your life be filled with tons and tons of happiness and laughter, MY BATTU ❤️
 
 Today is all about you! As you blow out the candles and make a wish, know that I'm wishing for all your dreams to come true this year.
-    </p>
+    </b></p>
     <button id="confettiButton">Touch it Love💖</button>
+    <a href="gallery.html" class="cute-button">💫 Go to Gallery 💜</a>
   </div>
 
   <script>
