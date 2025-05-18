@@ -51,9 +51,11 @@
 
   .card {
   position: relative;
+    width:100%;
+    max-width:400%;
   padding: 10x;
   background: #fdeef6;
-  border-radius: 25px;
+  border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
@@ -66,11 +68,12 @@
 
 .card img {
   width: 100%;
-  object-position: top; /* Keeps the top (face area) visible */
-  border-radius: 20px;
-  height: auto; /* You can adjust this value */
+  height: auto;             /* Let image keep natural height */
+  object-fit: contain;      /* Ensure image doesn't crop or stretch */
+  border-radius: 10px;
   display: block;
-  margin: auto;
+  margin: 0 auto;
+  object-position: top; /* Keeps the top (face area) visible */
 }
 
   .card:hover {
