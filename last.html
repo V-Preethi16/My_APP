@@ -18,10 +18,9 @@ html, body {
   background: linear-gradient(to bottom, #ff4d4d, #990000);
   color: white;
   overflow-x: hidden;
-  position: relative;
-  /* add flex layout to center vertically if needed */
-  display: flex;
-  flex-direction: column;
+  /* Remove flex to allow normal scroll */
+  /* Remove position: relative */
+  /* Remove display: flex */
 }
 
 /* Container fills viewport height minus footer or padding */
@@ -31,17 +30,17 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem 4rem 1rem; /* more bottom padding */
-  min-height: 100vh; /* keep full viewport height */
+  /* Remove justify-content: center to avoid vertical centering */
+  padding: 2rem 1rem 6rem 1rem; /* increased bottom padding for space */
+  /* Remove min-height 100vh so container can grow */
   box-sizing: border-box;
   text-align: center;
+  /* allow container height to grow naturally */
 }
-
 /* On small screens, add extra bottom padding */
 @media (max-width: 480px) {
   .container {
-    padding-bottom: 5rem; /* more bottom space for smaller screens */
+    padding-bottom: 7rem; /* extra bottom space */
   }
 }
 
@@ -94,23 +93,10 @@ html, body {
       text-align: center;
     }
 
-    /* Main container */
-    .container {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-      min-height: 100vh;
-      box-sizing: border-box;
-      text-align: center;
-    }
 
     /* Glowing heart */
     .heart {
-      font-size: 130px; /* bigger heart */
+      font-size: 120px; /* bigger heart */
       animation: deepBeat 1.5s infinite;
       margin-bottom: 1rem;
       color: #ff1a1a;
