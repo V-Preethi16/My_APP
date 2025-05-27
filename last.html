@@ -47,22 +47,25 @@
 
     /* Watermark Text Overlay */
     .watermark-text {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300%;
-      height: 300%;
-      z-index: 0;
-      opacity: 0.08;
-      font-size: 1.5rem;
-      color: white;
-      transform: rotate(-30deg);
-      white-space: nowrap;
-      pointer-events: none;
-      display: flex;
-      flex-wrap: wrap;
-      line-height: 3rem;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200vw; /* Extra wide */
+  height: 200vh; /* Extra tall */
+  z-index: 0;
+  opacity: 0.08; /* Brighter than before */
+  font-size: 2rem; /* Slightly larger */
+  color: rgba(255, 255, 255, 0.8); /* Visible on red */
+  transform: rotate(-30deg);
+  white-space: nowrap;
+  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 3rem;
+  overflow: hidden;
+}
 
     .watermark-text span {
       flex: 1 0 100%;
