@@ -41,9 +41,31 @@
       animation: fadeIn 2s ease;
     }
 
-   
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      z-index: 2;
+    }
 
-  
+    .card {
+      background: #fdeef6;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease;
+      animation: zoomFade 1s ease forwards;
+      transform: scale(0.95);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
 .hearts {
     position: fixed;
     top: 0;
@@ -65,35 +87,10 @@
     0% {
       transform: translateY(0) scale(1);
       opacity: 1;
-
-       .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      z-index: 2;
     }
-    
     100% {
       transform: translateY(-100vh) scale(1.2);
       opacity: 0;
-        .card {
-      background: #fdeef6;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.4s ease;
-      animation: zoomFade 1s ease forwards;
-      transform: scale(0.95);
-      opacity: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
-    }
     }
   }
 
@@ -110,10 +107,10 @@
 
       .card img {
         height: auto;          /* auto height to maintain aspect ratio */
-        max-height: 280px;     /* limit max height for mobile */
+        max-height: 290px;     /* limit max height for mobile */
         width: 100%;           /* full width */
         object-fit: contain;   /* prevent cropping */
-        padding: 0 5px;        /* horizontal padding */
+        padding: 0 7px;        /* horizontal padding */
         margin-bottom: 10px;   /* spacing below image */
       }
     }
@@ -272,9 +269,9 @@
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-      heart.style.left = `${Math.random() * 100}vw`;
-      heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
-      heart.style.fontSize = `${Math.random() * 20 + 16}px`;
+      heart.style.left = ${Math.random() * 100}vw;
+      heart.style.animationDuration = ${Math.random() * 3 + 4}s;
+      heart.style.fontSize = ${Math.random() * 20 + 16}px;
       document.getElementById('hearts').appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
